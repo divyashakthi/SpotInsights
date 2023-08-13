@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playlist Visualization</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css">
+
+    <style>
+        body{
+            background-color: black;
+            /* width: 100%;
+            height: 100vh; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            margin: 50px;
+            
+        }
+
+        h1{
+            color: white;
+            font-size: 50px;
+            font-family:'Courier New', Courier, monospace;
+        }
+
+        .btn{
+            background-color: blueviolet;
+            color: white;
+        }
+
+        .btn:hover{
+            background-color: blueviolet;
+            color: black;
+        }
+
+        .input-section{
+            display: flex;
+            gap: 12px;
+        }
+
+        #playlist_url{
+            border-radius: 5px;
+            width: 250px;
+        }
+
+        .plot-img{
+            border-radius: 50px;
+            width: 50%;
+            box-shadow: 10px 10px 8px blueviolet;
+        }
+
+        .id-label{
+            color: white;
+        }
+        
+        .form-class{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>--- Your Spotify Insights ---</h1>
+    <br>
+    <form method="post" action="/" class="form-class">
+        <label for="playlist_url" class="id-label">Enter Playlist URL:</label>
+        <div class="input-section">
+            <input type="text" id="playlist_url" name="playlist_url" required>
+            <button type="submit" class="btn">Generate Insights</button>
+        </div>
+    </form>
+    <br>
+    <img src="{{ url_for('static', filename='div_insights.png') }}" class="plot-img">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
